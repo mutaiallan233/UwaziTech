@@ -3,8 +3,8 @@
 
 public class ApiResponse 
 {
-    public string StatusMessage { get; set; }
     public string StatusCode { get; set; }
+    public string StatusMessage { get; set; }
     public bool Successful => StatusCode == ResponseCode.OK;
 }
 
@@ -28,5 +28,9 @@ public static class StatusMessage
     public const string RECORD_FOUND = "Record retrieved successfully";
     public const string RECORD_MISSING = "Referenced record Not Found";
 
-    public static string PENDING_IMPLEMENTATION = "Api implementation in progress";
+    public const string PENDING_IMPLEMENTATION = "Api implementation in progress";
+
+    public const string ERROR = "An error occured";
+
+    public const string UPDATE_NOT_NEEDED = "No changes detected. Nothing to update here";
 }
