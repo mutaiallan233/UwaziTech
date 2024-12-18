@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UwaziTech.API.Model.Request;
 using UwaziTech.API.Model.Response;
+using UwaziTech.Core.Services;
 using UwaziTech.Core.Services.Interfaces;
 
 namespace UwaziTech.API.Controllers
@@ -36,6 +37,13 @@ namespace UwaziTech.API.Controllers
         {
             var result = await _service.FetchHospitalDetailsAsync(reference, token);
 
+            return Ok(result);
+        }
+
+        [HttpPost("upload-invoice")]
+        public async Task<IActionResult> UploadInvoice([FromBody] InvoiceRequest request, CancellationToken token)
+        {
+            var result = _insuranceService.UploadInvoiceAsync(request, token);
             return Ok(result);
         }
     }

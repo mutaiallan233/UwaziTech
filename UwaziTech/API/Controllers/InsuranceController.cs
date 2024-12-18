@@ -29,13 +29,6 @@ namespace UwaziTech.API.Controllers
             return Ok(result);
         }
 
-         [HttpPost("upload-invoice")]
-        public async Task<IActionResult> UploadInvoice([FromBody] InvoiceRequest request, CancellationToken token)
-        {
-            var result = _insuranceService.UploadInvoiceAsync(request, token);
-            return Ok(result);
-        }
-
         [HttpGet("get-insurance-details")]
         public async Task<IActionResult> GetInsuranceDetails(string reference, CancellationToken token) 
         {
