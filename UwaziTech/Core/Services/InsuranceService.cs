@@ -142,29 +142,5 @@ namespace UwaziTech.Core.Services
             };
         }
 
-        public async Task<ApiResponse<InvoiceDetails>> UploadInvoiceAsync(InvoiceDetails request, CancellationToken token)
-        {
-            _appDbContext.InvoiceDetails.Add(request);
-            var result = await _appDbContext.SaveChangesAsync(token) > 0;
-
-            if (result)
-            {
-                return new ApiResponse<InvoiceDetails>
-                {
-                    StatusCode = ResponseCode.OK,
-                    StatusMessage = StatusMessage.DB_ADD_SUCCESSFUL,
-                    ResponseObject = request
-                };
-            }
-            else
-            {
-                return new ApiResponse<InvoiceDetails>
-                {
-                    StatusCode = ResponseCode.FAILED,
-                    StatusMessage = StatusMessage.DB_ADD_UNSUCCESSFUL,
-                    ResponseObject = request
-                };
-            }
-        }
     }
 }
