@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UwaziTech.API.Filters;
 using UwaziTech.API.Model.Request;
 using UwaziTech.Core.Services.Interfaces;
 
@@ -29,6 +30,7 @@ namespace UwaziTech.API.Controllers
         }
 
         [HttpPatch("update-user-detail")]
+        [RequiresFieldFromPayload("Reference")]
         public async Task<IActionResult> UpdateUserDetails(UserRequest request, CancellationToken token)
         {
             var result = await _service.UpdateUserDetailsAsync(request, token);
