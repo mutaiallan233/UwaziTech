@@ -54,8 +54,7 @@ public class UserService : IUserService
     {
         try
         {
-            var details = await _appDbContext.UserDetail
-                                                     .FirstOrDefaultAsync(e => e.Reference == request.Reference);
+            var details = await _appDbContext.UserDetail.FirstOrDefaultAsync(e => e.Reference == request.Reference);
 
             if (details == null)
             {
