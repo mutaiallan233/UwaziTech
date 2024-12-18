@@ -9,9 +9,9 @@ namespace UwaziTech.Core.Services;
 public class UserService : IUserService
 {
     private readonly AppDbContext _appDbContext;
-    private readonly ILogger _logger;
+    private readonly ILogger<UserService> _logger;
 
-    public UserService(AppDbContext appDbContext, ILogger logger)
+    public UserService(AppDbContext appDbContext, ILogger<UserService> logger)
     {
         _logger = logger;
         _appDbContext = appDbContext;
