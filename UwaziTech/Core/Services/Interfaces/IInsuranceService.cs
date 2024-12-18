@@ -11,7 +11,6 @@ namespace UwaziTech.Core.Services.Interfaces
         Task<ApiResponse<StatisticModel>> GetStatisticsAsync(CancellationToken token);
         Task<ApiResponse<AdminModel>> GetAdminDetailsAsync(string reference, CancellationToken token);
         Task<ApiResponse<InsuranceModel>> GetInsuranceDetailsAsync(string id, CancellationToken token);
-        Task<ApiResponse<InvoiceDetails>> UploadInvoiceAsync(InvoiceDetails request, CancellationToken token);
         Task<ApiResponse<AdminDetails>> AddInsuranceAdminAsync(AdminDetails request, CancellationToken token);
         Task<ApiResponse<InsuranceDetails>> AddInsuranceDetailsAsync(InsuranceDetails request, CancellationToken token);
     }

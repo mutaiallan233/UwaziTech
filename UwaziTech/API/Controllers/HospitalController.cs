@@ -43,7 +43,7 @@ namespace UwaziTech.API.Controllers
         [HttpPost("upload-invoice")]
         public async Task<IActionResult> UploadInvoice([FromBody] InvoiceRequest request, CancellationToken token)
         {
-            var result = _insuranceService.UploadInvoiceAsync(request, token);
+            var result = _service.UploadInvoiceAsync(request, token);
             return Ok(result);
         }
     }
